@@ -16,18 +16,26 @@ public class ValorVsReferencia {
         Data d2 = d1;
 
         d1.dia = 14;
-        d2.mes = 11 ;
+        d2.mes  = 11 ;
         System.out.println(d1.obterDataFormatada());
         System.out.println(d2.obterDataFormatada());
 
         voltar_data_para_valor_padrao(d1);
         System.out.println(d1.obterDataFormatada());
         System.out.println(d2.obterDataFormatada());
+
+        int c = 5;
+        alterarPrimitivo(c);
+        System.out.println(c);
     }
 
     static void voltar_data_para_valor_padrao(Data d) {
         d.dia = 1;
         d.mes = 1;
         d.ano = 1970;
+    }
+
+    static void alterarPrimitivo(int a) {
+        a++;
     }
 }
