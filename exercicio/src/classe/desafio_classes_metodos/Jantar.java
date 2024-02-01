@@ -8,9 +8,11 @@ public class Jantar {
 		
 		Pessoa joao = new Pessoa("João", 72);
 		System.out.println("Peso antes de comer: "+ joao.peso + " kg");
+		
 		joao.comer(feijao);
 		joao.comer(arroz);
 		joao.comer(carne);
+		
 		System.out.println("Peso depois de comer: "+ joao.peso + " kg");
 	}
 }

@@ -9,8 +9,10 @@ public class Pessoa {
 		this.peso = peso;
 	}
 	
-	public double comer(Comida comida) {
-		this.peso += comida.peso;
+	double comer(Comida comida) {
+		if (comida != null) {			
+			this.peso += comida.peso;
+		}
 		return this.peso;
 	}
 }
