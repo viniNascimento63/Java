@@ -3,31 +3,33 @@ package arrays;
 import java.util.Scanner;
 
 public class Matriz {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Digite o número de alunos na turma: ");
+		int numAlunos = scan.nextInt();
 
-
-        Scanner scan = new Scanner(System.in);
-
-        System.out.print("Digite a quantidade de alunos na turma: ");
-        int num_alunos = scan.nextInt();
-
-        double[][] turma = new double[num_alunos][];
-
-        for (int i = 0; i < num_alunos; i++) {
-            System.out.print("\nDigite quantas notas tem o aluno "
-                    + (i + i) + ":");
-
-            int num_notas = scan.nextInt();
-
-            for (int j = 0; j < num_notas; j++) {
-                System.out.print("\nDigite a nota " + (j + 1) + ": ");
-                double nota = scan.nextDouble();
-                double[] nota_aluno = new double[]{nota};
-                turma[i][j] = nota_aluno;
-            }
-        }
-
-
-        scan.close();
-    }
+		System.out.print("\nDigite o número de notas de cada aluno: ");
+		int numNotas = scan.nextInt();
+		
+		double[][] turma = new double[numAlunos][numNotas];
+		double somatorioNotas = 0;
+		
+		for (int i = 0; i < numAlunos; i++) {
+			System.out.println("\nNotas do aluno " + (i + 1));
+			
+			for (int j = 0; j < numNotas; j++) {
+				System.out.print("Nota " + (j + 1) + ": ");
+				double nota = scan.nextDouble();
+				turma[i][j] = nota;
+				somatorioNotas += nota;
+			}
+		}
+		
+		double mediaNotas = somatorioNotas / (numAlunos * numNotas);
+		
+		System.out.println("\nMédia das notas: " + mediaNotas);
+		
+		scan.close();
+	}
 }
