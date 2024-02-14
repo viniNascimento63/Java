@@ -25,10 +25,20 @@ public class Matriz {
 				somatorioNotas += nota;
 			}
 		}
-		
+
+		for (int i = 0; i < turma.length; i++) {
+			System.out.println("\n\nMédia das notas dos alunos:");
+			double nota = 0;
+			for (int j = 0; j < turma[i].length; j++) {
+				nota += turma[i][j];
+			}
+			double media = nota / turma[i].length;
+			System.out.println("Aluno " + (i + 1) + ", média: " + media);
+		}
+
 		double mediaNotas = somatorioNotas / (numAlunos * numNotas);
 		
-		System.out.println("\nMédia das notas: " + mediaNotas);
+		System.out.println("\nMédia de notas da turma: " + mediaNotas);
 		
 		scan.close();
 	}
