@@ -26,19 +26,23 @@ public class Matriz {
 			}
 		}
 
+		// Percorre cada aluno na turma
 		for (int i = 0; i < turma.length; i++) {
 			System.out.println("\n\nMédia das notas dos alunos:");
-			double nota = 0;
-			for (int j = 0; j < turma[i].length; j++) {
-				nota += turma[i][j];
+			double[] notas = turma[i];
+
+			double somatorio = 0;
+			// Percorre cada nota de um aluno
+			for (double nota: notas) {
+				somatorio += nota;
 			}
-			double media = nota / turma[i].length;
-			System.out.println("Aluno " + (i + 1) + ", média: " + media);
+			System.out.println("Aluno " + (i + 1) + ", média: "
+					+ somatorio/notas.length);
 		}
 
-		double mediaNotas = somatorioNotas / (numAlunos * numNotas);
+		double media_turma = somatorioNotas / (numAlunos * numNotas);
 		
-		System.out.println("\nMédia de notas da turma: " + mediaNotas);
+		System.out.println("\nMédia de notas da turma: " + media_turma);
 		
 		scan.close();
 	}
