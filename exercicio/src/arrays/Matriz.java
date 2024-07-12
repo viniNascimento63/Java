@@ -9,7 +9,7 @@ public class Matriz {
 		System.out.print("Digite o número de alunos na turma: ");
 		int numAlunos = scan.nextInt();
 
-		System.out.print("\nDigite o número de notas de cada aluno: ");
+		System.out.print("\nQuantas vezes são lançadas notas finais?: ");
 		int numNotas = scan.nextInt();
 		
 		double[][] turma = new double[numAlunos][numNotas];
